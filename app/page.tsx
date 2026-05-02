@@ -157,45 +157,30 @@ export default function DataMindApp() {
   }
 
   return (
-    <div className="flex h-screen bg-[#f4f5f7] overflow-hidden">
-      {/* ── Sidebar ─────────────────────────── */}
-      <aside className="sidebar w-64 hidden md:flex flex-col p-4 gap-3">
-        <div className="flex items-center gap-2 px-2 py-3">
-          <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-400 to-indigo-600 flex items-center justify-center">
-            <Database className="w-4 h-4 text-white" />
-          </div>
-          <span className="font-semibold text-gray-800 text-sm">DataMind</span>
-        </div>
-
-        <button onClick={resetChat} className="new-chat-btn flex items-center gap-2 px-3 py-2.5 text-sm text-gray-600 font-medium">
-          <Plus className="w-4 h-4" />
-          Nueva consulta
-        </button>
-
-        <div className="mt-auto">
-          <p className="text-xs text-gray-400 px-2">Powered by Gemini ✦</p>
-        </div>
-      </aside>
-
+    <div className="flex h-screen bg-white overflow-hidden">
       {/* ── Chat Panel ──────────────────────── */}
-      <div className="flex flex-col flex-1 h-full min-w-0">
+      <div className="flex flex-col w-full h-full">
         {/* Header */}
-        <header className="flex items-center justify-between px-6 py-4 bg-white border-b border-gray-100">
+        <header className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span className="text-sm font-medium text-gray-700">Asistente conectado a tu base de datos</span>
+            <span className="text-sm font-medium text-gray-700">Satoshi Agent</span>
           </div>
-          <button onClick={resetChat} className="md:hidden text-gray-400 hover:text-gray-600">
-            <Plus className="w-5 h-5" />
+          <button 
+            onClick={resetChat} 
+            className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium text-indigo-600 hover:bg-indigo-50 rounded-lg transition-colors"
+          >
+            <Plus className="w-4 h-4" />
+            Nueva consulta
           </button>
         </header>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto chat-scroll">
+        <div className="flex-1 overflow-y-auto chat-scroll bg-[#f8f9fb]">
           {messages.length === 0 && !isLoading ? (
             <EmptyState onSuggestion={(q) => handleSubmit(q)} />
           ) : (
-            <div className="max-w-3xl mx-auto px-4 py-6 flex flex-col gap-5">
+            <div className="max-w-3xl mx-auto px-4 py-8 flex flex-col gap-6">
               {messages.map((msg, i) => (
                 <MessageBubble key={i} msg={msg} />
               ))}
