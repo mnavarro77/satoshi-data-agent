@@ -14,10 +14,6 @@ Un agente AI Text-to-SQL construido con Next.js, Google Gemini y Neon PostgreSQL
 
 </div>
 
-<div align="center">
-  <img src="public/demo.png" alt="Satoshi Data Agent Demo" width="800px" />
-</div>
-
 ---
 
 ## 📖 Tabla de Contenidos
@@ -61,11 +57,6 @@ Esto es un patrón **RAG sobre base de datos relacional** — en lugar de buscar
 
 ---
 
-## 🎬 Demo
-
-> *(Agrega aquí un GIF o screenshot de la app en funcionamiento)*
-
----
 
 ## 🏗️ Arquitectura
 
